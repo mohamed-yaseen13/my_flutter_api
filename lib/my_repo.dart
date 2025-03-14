@@ -12,7 +12,7 @@ class MyRepo {
     return response.map((user) => User.fromJson(user.toJson())).toList();
   }
 
-  Future<User> getOneUser(String userId) async {
+  Future<User> getOneUser(int userId) async {
     var responce = await webServices.getOneUser(userId);
 
     return User.fromJson(responce.toJson());

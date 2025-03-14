@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     //BlocProvider.of<MyCubit>(context).emitGetAllUsers();
 
-    BlocProvider.of<MyCubit>(context).emitGetOneUser('7767258');
+    BlocProvider.of<MyCubit>(context).emitGetOneUser(7765937);
   }
 
   @override
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Center(child: Text(user.name.toString())),
                 );
               } else {
-                return const Center(child: Text('Unexpected state'));
+                return const Center(child: CircularProgressIndicator());
               }
             },
           ),

@@ -50,7 +50,7 @@ class _WebServices implements WebServices {
   }
 
   @override
-  Future<User> getOneUser(String id) async {
+  Future<User> getOneUser(int id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
