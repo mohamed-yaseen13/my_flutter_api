@@ -19,4 +19,10 @@ abstract class WebServices {
     @Body() User newuser,
     @Header('Authorization') String token,
   );
+
+  @DELETE('users/{id}')
+  Future<void> deleteUser(
+    @Path() int id,
+    @Header('Authorization') String token,
+  );
 }

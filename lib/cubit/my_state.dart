@@ -22,3 +22,5 @@ class CreateNewUser extends MyState {
 
   CreateNewUser(this.newUser);
 }
+
+class DeleteUser extends MyState {}

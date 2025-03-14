@@ -27,4 +27,8 @@ class MyCubit extends Cubit<MyState> {
       emit(CreateNewUser(newUser));
     });
   }
+
+  void emitDeleteUser(int id) {
+    myRepo.deleteUser(id).then((_) => emit(DeleteUser()));
+  }
 }
