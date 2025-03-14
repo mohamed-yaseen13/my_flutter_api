@@ -13,11 +13,15 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<User> usersList = [];
 
+  User user = User();
+
   @override
   void initState() {
     super.initState();
 
-    BlocProvider.of<MyCubit>(context).emitGetAllUsers();
+    //BlocProvider.of<MyCubit>(context).emitGetAllUsers();
+
+    BlocProvider.of<MyCubit>(context).emitGetOneUser('7767258');
   }
 
   @override
@@ -28,24 +32,15 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           BlocBuilder<MyCubit, MyState>(
             builder: (context, state) {
-              if (state is GetAllUsers) {
-                usersList = (state).allUsersList;
-                return ListView.builder(
-                  shrinkWrap: true,
-                  padding: const EdgeInsets.all(8),
-                  itemCount: usersList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 50,
-                      color: Colors.amber,
-                      child: Center(
-                        child: Text(usersList[index].name.toString()),
-                      ),
-                    );
-                  },
+              if (state is GetOneUser) {
+                user = (state).oneUser;
+                return Container(
+                  height: 50,
+                  color: Colors.amber,
+                  child: Center(child: Text(user.name.toString())),
                 );
               } else {
-                return const Center(child: CircularProgressIndicator());
+                return const Center(child: Text('Unexpected state'));
               }
             },
           ),

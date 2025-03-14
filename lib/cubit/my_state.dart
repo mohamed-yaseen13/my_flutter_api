@@ -10,3 +10,9 @@ class GetAllUsers extends MyState {
 
   GetAllUsers(this.allUsersList);
 }
+
+class GetOneUser extends MyState {
+  final User oneUser;
+
+  GetOneUser(this.oneUser);
+}
