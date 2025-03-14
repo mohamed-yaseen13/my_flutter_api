@@ -21,7 +21,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
     //BlocProvider.of<MyCubit>(context).emitGetAllUsers();
 
-    BlocProvider.of<MyCubit>(context).emitGetOneUser(7765937);
+    //BlocProvider.of<MyCubit>(context).emitGetOneUser(7765937);
+
+    BlocProvider.of<MyCubit>(context).emitCreateNewUser(
+      User(
+        name: "Omar",
+        gender: "female",
+        email: "mohamd@gmail.com",
+        status: "active",
+      ),
+    );
   }
 
   @override
@@ -32,8 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           BlocBuilder<MyCubit, MyState>(
             builder: (context, state) {
-              if (state is GetOneUser) {
-                user = (state).oneUser;
+              if (state is CreateNewUser) {
+                user = (state).newUser;
                 return Container(
                   height: 50,
                   color: Colors.amber,

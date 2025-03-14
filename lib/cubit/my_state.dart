@@ -16,3 +16,9 @@ class GetOneUser extends MyState {
 
   GetOneUser(this.oneUser);
 }
+
+class CreateNewUser extends MyState {
+  final User newUser;
+
+  CreateNewUser(this.newUser);
+}

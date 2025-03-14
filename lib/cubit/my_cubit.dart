@@ -21,4 +21,10 @@ class MyCubit extends Cubit<MyState> {
       emit(GetOneUser(oneUser));
     });
   }
+
+  void emitCreateNewUser(User newUser) {
+    myRepo.createNewUser(newUser).then((newUser) {
+      emit(CreateNewUser(newUser));
+    });
+  }
 }

@@ -13,4 +13,10 @@ abstract class WebServices {
 
   @GET('users/{id}')
   Future<User> getOneUser(@Path() int id);
+
+  @POST("users")
+  Future<User> createNewUser(
+    @Body() User newuser,
+    @Header('Authorization') String token,
+  );
 }

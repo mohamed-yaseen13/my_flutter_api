@@ -7,14 +7,17 @@ class MyRepo {
   MyRepo(this.webServices);
 
   Future<List<User>> getAllUsers() async {
-    var response = await webServices.getAllUsers();
-
-    return response.map((user) => User.fromJson(user.toJson())).toList();
+    return await webServices.getAllUsers();
   }
 
   Future<User> getOneUser(int userId) async {
-    var responce = await webServices.getOneUser(userId);
+    return await webServices.getOneUser(userId);
+  }
 
-    return User.fromJson(responce.toJson());
+  Future<User> createNewUser(User newUser) async {
+    return await webServices.createNewUser(
+      newUser,
+      'Bearer 03e5914f4116ddcdd05d5c4eac2ef3856aff1cd3266f2d084c7e1ad465ffce65',
+    );
   }
 }
