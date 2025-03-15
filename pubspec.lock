@@ -82,7 +82,11 @@ packages:
     source: hosted
     version: "2.4.4"
   build_runner:
+<<<<<<< HEAD
     dependency: "direct main"
+=======
+    dependency: "direct dev"
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
     description:
       name: build_runner
       sha256: "058fe9dce1de7d69c4b84fada934df3e0153dd000758c4d65964d0166779aa99"
@@ -251,6 +255,25 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
+=======
+  freezed:
+    dependency: "direct dev"
+    description:
+      name: freezed
+      sha256: a6274c34d61b3d68082f2b0e9a641a3ec197e525d269f35b82f62d5b2c6d9f75
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.3"
+  freezed_annotation:
+    dependency: "direct main"
+    description:
+      name: freezed_annotation
+      sha256: c87ff004c8aa6af2d531668b46a4ea379f7191dc6dfa066acd53d506da6e044b
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
   frontend_server_client:
     dependency: transitive
     description:

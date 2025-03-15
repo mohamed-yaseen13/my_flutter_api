@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 part of 'my_cubit.dart';
 
 @immutable
@@ -29,4 +30,20 @@ class UpdateUser extends MyState {
   final User newUser;
 
   UpdateUser(this.newUser);
+=======
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:my_flutter_api/network_exceptions.dart';
+
+part 'my_state.freezed.dart';
+
+@freezed
+class MyState<T> with _$MyState<T> {
+  const factory MyState.idle() = Idle<T>;
+
+  const factory MyState.loading() = Loading<T>;
+
+  const factory MyState.success(T data) = Success<T>;
+
+  const factory MyState.error(NetworkExceptions networkExceptions) = Error<T>;
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
 }

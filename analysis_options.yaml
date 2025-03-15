@@ -11,6 +11,12 @@ analyzer:
   errors:
     unused_element_parameter: ignore
     depend_on_referenced_packages: ignore
+<<<<<<< HEAD
+=======
+    deprecated_member_use: ignore
+    unused_catch_clause: ignore
+    unused_import: ignore
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
 include: package:flutter_lints/flutter.yaml
 
 linter:

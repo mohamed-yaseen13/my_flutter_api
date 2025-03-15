@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_flutter_api/cubit/my_cubit.dart';
+<<<<<<< HEAD
+=======
+import 'package:my_flutter_api/cubit/my_state.dart';
+import 'package:my_flutter_api/network_exceptions.dart';
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
 import 'package:my_flutter_api/user.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     //BlocProvider.of<MyCubit>(context).emitGetOneUser(7765937);
 
+<<<<<<< HEAD
     //BlocProvider.of<MyCubit>(context).emitCreateNewUser(
     //  User(
     //    name: "Omar",
@@ -43,6 +49,28 @@ class _HomeScreenState extends State<HomeScreen> {
         gender: "male",
       ),
     );
+=======
+    BlocProvider.of<MyCubit>(context).emitCreateNewUser(
+      User(
+        name: "Omar",
+        gender: "female",
+        email: "yaseen_ali@gmail.com",
+        status: "active",
+      ),
+    );
+
+    //BlocProvider.of<MyCubit>(context).emitDeleteUser(7765933);
+
+    //BlocProvider.of<MyCubit>(context).emitUpdateUser(
+    //  7770906,
+    //  User(
+    //    name: "Mohamed",
+    //    email: "ai@gmail.com",
+    //    status: "active",
+    //    gender: "male",
+    //  ),
+    //);
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
   }
 
   @override
@@ -51,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(title: const Text('Home Screen')),
       body: Column(
         children: [
+<<<<<<< HEAD
           BlocBuilder<MyCubit, MyState>(
             builder: (context, state) {
               if (state is UpdateUser) {
@@ -63,6 +92,29 @@ class _HomeScreenState extends State<HomeScreen> {
               } else {
                 return const Center(child: CircularProgressIndicator());
               }
+=======
+          BlocBuilder<MyCubit, MyState<User>>(
+            builder: (context, state) {
+              if (state is Idle) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (state is Loading) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (state is Success) {
+                final User userData = (state as Success).data;
+                return Container(
+                  height: 50,
+                  color: Colors.amber,
+                  child: Center(child: Text(userData.email.toString())),
+                );
+              } else if (state is Error) {
+                final NetworkExceptions error =
+                    (state as Error).networkExceptions;
+                return Center(
+                  child: Text(NetworkExceptions.getErrorMessage(error)),
+                );
+              }
+              return const SizedBox();
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
             },
           ),
         ],

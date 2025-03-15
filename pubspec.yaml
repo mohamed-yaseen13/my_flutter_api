@@ -28,12 +28,21 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+<<<<<<< HEAD
   build_runner: ^2.4.15
+=======
+  
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
   cupertino_icons: ^1.0.8
   dio: ^5.8.0+1
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.0
+<<<<<<< HEAD
+=======
+  
+  freezed_annotation: ^3.0.0
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
   get_it: ^8.0.3
   json_annotation: ^4.9.0
   json_serializable: ^6.9.4
@@ -44,6 +53,11 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
+<<<<<<< HEAD
+=======
+  freezed: ^3.0.3
+  build_runner: ^2.4.15
+>>>>>>> 15438fb (Restoring repository connection and pushing changes)
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
