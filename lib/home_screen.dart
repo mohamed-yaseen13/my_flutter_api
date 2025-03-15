@@ -32,7 +32,17 @@ class _HomeScreenState extends State<HomeScreen> {
     //  ),
     //);
 
-    BlocProvider.of<MyCubit>(context).emitDeleteUser(7765933);
+    //BlocProvider.of<MyCubit>(context).emitDeleteUser(7765933);
+
+    BlocProvider.of<MyCubit>(context).emitUpdateUser(
+      7770906,
+      User(
+        name: "Mohamed",
+        email: "ali@gmail.com",
+        status: "active",
+        gender: "male",
+      ),
+    );
   }
 
   @override
@@ -43,12 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           BlocBuilder<MyCubit, MyState>(
             builder: (context, state) {
-              if (state is DeleteUser) {
-                // user = (state).newUser;
+              if (state is UpdateUser) {
+                user = (state).newUser;
                 return Container(
                   height: 50,
                   color: Colors.amber,
-                  child: Center(child: Text('User Deleted Successfully')),
+                  child: Center(child: Text(user.name.toString())),
                 );
               } else {
                 return const Center(child: CircularProgressIndicator());

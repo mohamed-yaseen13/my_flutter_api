@@ -27,4 +27,12 @@ class MyRepo {
       'Bearer 03e5914f4116ddcdd05d5c4eac2ef3856aff1cd3266f2d084c7e1ad465ffce65',
     );
   }
+
+  Future<User> updateUser(int id, User newUser) async {
+    return await webServices.updateUser(
+      id,
+      newUser,
+      'Bearer 03e5914f4116ddcdd05d5c4eac2ef3856aff1cd3266f2d084c7e1ad465ffce65',
+    );
+  }
 }

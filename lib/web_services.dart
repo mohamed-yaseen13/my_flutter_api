@@ -25,4 +25,11 @@ abstract class WebServices {
     @Path() int id,
     @Header('Authorization') String token,
   );
+
+  @PUT('users/{id}')
+  Future<User> updateUser(
+    @Path() id,
+    @Body() User newUser,
+    @Header('Authorization') String token,
+  );
 }

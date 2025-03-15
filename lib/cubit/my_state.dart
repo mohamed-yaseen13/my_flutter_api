@@ -24,3 +24,9 @@ class CreateNewUser extends MyState {
 }
 
 class DeleteUser extends MyState {}
+
+class UpdateUser extends MyState {
+  final User newUser;
+
+  UpdateUser(this.newUser);
+}
